@@ -1,0 +1,78 @@
+doctype html
+html
+    head
+        title=`${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        style.
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f0f8ff;
+                color: #33475b;
+                padding: 20px;
+                margin: 0;
+            }
+
+            h1 {
+                text-align: center;
+                color: #2b7bba;
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .link-container {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .movies-table-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            th, td {
+                border: 1px solid #d9e3ec;
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #2b7bba;
+                color: white;
+            }
+
+            td {
+                background-color: #ffffff;
+            }
+
+            a {
+                color: #f57c00;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    body
+        h1= title
+        div(class="link-container")
+            a(href="/update-cobj") Add/Update this table
+        div(class="movies-table-container")
+            table
+                thead
+                    tr
+                        th Name
+                        th Director
+                        th Year
+                tbody
+                    each movie in movies
+                        tr
+                            td= movie.name
+                            td= movie.director
+                            td= movie.year
