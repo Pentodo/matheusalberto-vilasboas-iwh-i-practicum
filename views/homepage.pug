@@ -50,19 +50,24 @@ html
                 background-color: #ffffff;
             }
 
-            a {
-                color: #f57c00;
-                text-decoration: none;
+            .add-button {
+                display: inline-block;
+                background-color: #f57c00;
+                color: white;
                 font-weight: bold;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
             }
 
-            a:hover {
-                text-decoration: underline;
+            .add-button:hover {
+                background-color: #e64a19;
             }
     body
         h1= title
         div(class="link-container")
-            a(href="/update-cobj") Add/Update this table
+            a(href="/update-cobj" class="add-button") Add to this table
         div(class="movies-table-container")
             table
                 thead
