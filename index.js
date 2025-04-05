@@ -29,9 +29,19 @@ app.get("/update-cobj", (req, res) => {
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
 // * Code for Route 3 goes here
-app.post("/update-cobj", (req, res) => {
-  console.log(req.body);
-  res.redirect("/");
+app.post("/update-cobj", async (req, res) => {
+  const createMovie = "https://api.hubspot.com/crm/v3/objects/2-42948566";
+  const headers = {
+    Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+    "Content-Type": "application/json",
+  };
+
+  try {
+    await axios.post(createMovie, { properties: req.body }, { headers });
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 /** 
