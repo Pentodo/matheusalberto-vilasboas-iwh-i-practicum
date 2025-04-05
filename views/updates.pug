@@ -1,0 +1,77 @@
+doctype html
+html
+    head
+        title=`${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        style.
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f0f8ff;
+                color: #33475b;
+                padding: 20px;
+                margin: 0;
+            }
+
+            h1 {
+                text-align: center;
+                color: #2b7bba;
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .form-container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 30px;
+                background-color: #ffffff;
+                border: 1px solid #d9e3ec;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #33475b;
+            }
+
+            .input-field, .submit-button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #d9e3ec;
+                border-radius: 4px;
+                font-size: 1em;
+                color: #33475b;
+                box-sizing: border-box; /* Adicionado para consistência */
+            }
+
+            .input-field:focus {
+                border-color: #2b7bba;
+                outline: none;
+            }
+
+            .submit-button {
+                background-color: #f57c00;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .submit-button:hover {
+                background-color: #e64a19;
+            }
+    body
+        h1= title
+        form(action="" method="POST" class="form-container")
+            label(for="name") Name:
+            input(type="text" id="name" name="name" required class="input-field")
+            label(for="director") Director:
+            input(type="text" id="director" name="director" required class="input-field")
+            label(for="year") Year:
+            input(type="number" id="year" name="year" required class="input-field")
+            button(type="submit" class="submit-button") Create
